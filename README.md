@@ -1,5 +1,5 @@
 # MOFH.py by Robert S.
-An async API warpper for [MyOwnFreeHost](https://myownfreehost.net).
+An async API wrapper for [MyOwnFreeHost](https://myownfreehost.net).
 
 ## Installation
 

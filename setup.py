@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="mofh",
-    version="0.0.1",
+    version="0.0.2",
     author="Robert S.",
     author_email="admin@robert-s.dev",
     description="Async API wrapper for https://myownfreehost.net",
