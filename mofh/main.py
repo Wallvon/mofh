@@ -22,7 +22,7 @@ class Client(object):
     async def create(self, username : str, password: str, contactemail: str, domain: str, plan: str):
         """
         Send query and get response.
-        Prameters:
+        Parameters:
             username: user's internal username, has a limit of 8 characters.
             password: user's password on the vPanel.
             contactemail: user's email on the vPanel.
@@ -56,7 +56,7 @@ class Client(object):
     async def suspend(self, username : str, reason: str):
         """
         Send query and get response.
-        Prameters:
+        Parameters:
             username: user's internal username, has a limit of 8 characters.
             reason: reason of suspension.
         """
@@ -83,7 +83,7 @@ class Client(object):
     async def unsuspend(self, username: str):
         """
         Send query and get response.
-        Prameters:
+        Parameters:
             username: user's internal username, has a limit of 8 characters.
         """
 
@@ -108,7 +108,7 @@ class Client(object):
     async def chpassword(self, username: str, password: str):
         """
         Send query and get response.
-        Prameters:
+        Parameters:
             username: user's internal username, has a limit of 8 characters.
             password: user's new password.
         """
@@ -135,7 +135,7 @@ class Client(object):
     async def availability(self, domain: str):
         """
         Send query and get response.
-        Prameters:
+        Parameters:
             domain: domain you want to check.
         """
 
@@ -154,7 +154,7 @@ class Client(object):
     async def getuserdomains(self, username: str):
         """
         Send query and get response.
-        Prameters:
+        Parameters:
             username: user's vPanel username, e.g. hname_12345678.
         """
 
@@ -176,7 +176,7 @@ class Client(object):
     async def getdomainuser(self, domain: str):
         """
         Send query and get response.
-        Prameters:
+        Parameters:
             domain: domain of the user you want to check.
         """
 
