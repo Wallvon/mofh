@@ -1,7 +1,7 @@
 Installation
 ================================
 
-mofh requires Python >=3.7.
+mofh requires Python >=3.8.
 
 |
 
