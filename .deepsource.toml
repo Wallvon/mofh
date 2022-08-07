@@ -1,0 +1,23 @@
+version = 1
+
+test_patterns = ["tests/**"]
+
+exclude_patterns = [
+  "docs/**",
+  ".github/**"
+]
+
+[[analyzers]]
+name = "test-coverage"
+enabled = true
+
+[[analyzers]]
+name = "python"
+enabled = true
+
+  [analyzers.meta]
+  runtime_version = "3.x.x"
+
+[[transformers]]
+name = "black"
+enabled = true

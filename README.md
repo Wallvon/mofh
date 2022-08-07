@@ -1,4 +1,10 @@
+![License](https://img.shields.io/github/license/Wallvon/mofh?color=A42E2B&logo=gnu&logoColor=white&style=for-the-badge)
+![Compatible Python versions](https://img.shields.io/pypi/pyversions/mofh?logo=python&logoColor=ffd242&style=for-the-badge)
+![PyPi monthly downloads](https://img.shields.io/pypi/dm/mofh?color=ffd242&label=PyPi%20Downloads&logo=pypi&style=for-the-badge)
+![PyPi version](https://img.shields.io/pypi/v/mofh?label=PyPi%20Version&logo=pypi&logoColor=ffd242&style=for-the-badge)
+
 ![Tests](https://github.com/Wallvon/mofh/actions/workflows/tests.yml/badge.svg)
+
 # mofh by Robert S.
 An API wrapper for [MyOwnFreeHost](https://myownfreehost.net).
 
