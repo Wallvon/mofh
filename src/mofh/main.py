@@ -1,7 +1,7 @@
 import ast
 import asyncio
 import xml.etree.ElementTree
-from typing import Optional, Any, Type
+from typing import Optional, Any, Union
 from xml.etree.ElementTree import Element
 
 import uvloop
@@ -121,7 +121,7 @@ class Client(object):
                 error = root[0][3].text
                 raise APIError(error, 0)
 
-    def suspend(self, username: str, reason: str) -> Optional[str]:
+    def suspend(self, username: str, reason: str) -> Optional[int]:
         """
         Suspends a user's vPanel account.
 
@@ -157,7 +157,7 @@ class Client(object):
                 # Raise exception with error.
                 raise APIError(response, 0)
 
-    def unsuspend(self, username: str) -> Optional[str]:
+    def unsuspend(self, username: str) -> Optional[int]:
         """
         Unsuspends a user's vPanel account.
 
@@ -192,7 +192,7 @@ class Client(object):
                 # Raise exception with error.
                 raise APIError(response, 0)
 
-    def change_password(self, username: str, password: str) -> Optional[str]:
+    def change_password(self, username: str, password: str) -> Optional[int]:
         """
         Changes a user's vPanel account password.
 
@@ -356,7 +356,7 @@ class AsyncClient(object):
         password,
         api_url: str = "https://panel.myownfreehost.net/xml-api/",
         *,
-        session: Type[ClientSession] = None,
+        session: Union[ClientSession, None] = None,
     ):
         self.username = username
         self.password = password
@@ -369,7 +369,7 @@ class AsyncClient(object):
     async def __aexit__(self, exc_type, exc_value, traceback):
         await self.close()
 
-    async def _ensure_session(self) -> ClientSession:
+    async def _ensure_session(self) -> Any:
         """
         Ensure that the session is created.
         """
@@ -451,7 +451,7 @@ class AsyncClient(object):
                 error = root[0][3].text
                 raise APIError(error, 0)
 
-    async def suspend(self, username: str, reason: str) -> Optional[str]:
+    async def suspend(self, username: str, reason: str) -> Optional[int]:
         """
         Suspends a user's vPanel account.
 
@@ -487,7 +487,7 @@ class AsyncClient(object):
                 # Raise exception with error.
                 raise APIError(response, 0)
 
-    async def unsuspend(self, username: str) -> Optional[str]:
+    async def unsuspend(self, username: str) -> Optional[int]:
         """
         Unsuspends a user's vPanel account.
 
@@ -522,7 +522,7 @@ class AsyncClient(object):
                 # Raise exception with error.
                 raise APIError(response, 0)
 
-    async def change_password(self, username: str, password: str) -> Optional[str]:
+    async def change_password(self, username: str, password: str) -> Optional[int]:
         """
         Changes a user's vPanel account password.
 
