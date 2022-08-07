@@ -148,7 +148,7 @@ class Client:
                     return int(status)
                 except ValueError:
                     raise APIError(response, 0)
-            except xml.etree.ElementTree.ParseError:
+            except ElementTree.ParseError:
                 # Raise exception with error.
                 raise APIError(response, 0)
 
@@ -183,7 +183,7 @@ class Client:
                     return int(status)
                 except ValueError:
                     raise APIError(response, 0)
-            except xml.etree.ElementTree.ParseError:
+            except ElementTree.ParseError:
                 # Raise exception with error.
                 raise APIError(response, 0)
 
@@ -219,7 +219,7 @@ class Client:
                     return int(status)
                 except ValueError:
                     raise APIError(response, 0)
-            except xml.etree.ElementTree.ParseError:
+            except ElementTree.ParseError:
                 # Raise exception with error.
                 raise APIError("Invalid username provided.", 0)
 
@@ -474,7 +474,7 @@ class AsyncClient:
                     return int(status)
                 except ValueError:
                     raise APIError(response, 0)
-            except xml.etree.ElementTree.ParseError:
+            except ElementTree.ParseError:
                 # Raise exception with error.
                 raise APIError(response, 0)
 
@@ -509,7 +509,7 @@ class AsyncClient:
                     return int(status)
                 except ValueError:
                     raise APIError(response, 0)
-            except xml.etree.ElementTree.ParseError:
+            except ElementTree.ParseError:
                 # Raise exception with error.
                 raise APIError(response, 0)
 
@@ -545,7 +545,7 @@ class AsyncClient:
                     return int(status)
                 except ValueError:
                     raise APIError(response, 0)
-            except xml.etree.ElementTree.ParseError:
+            except ElementTree.ParseError:
                 # Raise exception with error.
                 raise APIError("Invalid username provided.", 0)
 
