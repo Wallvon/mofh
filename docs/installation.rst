@@ -1,9 +1,9 @@
 Installation
 ================================
 
-MOFH requires Python 3.7+ due to the version of AIOHTTP used.
+mofh requires Python >=3.7.
 
 |
 
-You can install MOFH as follows:
+You can install mofh as follows:
     ``pip install mofh``

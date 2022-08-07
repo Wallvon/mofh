@@ -111,4 +111,7 @@ dmypy.json
 .idea/
 .vscode/
 
+# Environment
+.env
+
 # End of https://www.gitignore.io/api/python
