@@ -1,8 +1,7 @@
 import ast
 import asyncio
-import xml.etree.ElementTree
+from defusedxml import ElementTree
 from typing import Optional, Any, Union
-from xml.etree.ElementTree import Element
 
 import uvloop
 from aiohttp import ClientSession, BasicAuth, TCPConnector
@@ -12,7 +11,7 @@ from requests.auth import HTTPBasicAuth
 from .errors import APIError
 
 
-class Client(object):
+class Client:
     """
     MyOwnFreeHost API client.
 
@@ -55,17 +54,14 @@ class Client(object):
         return self._session
 
     @staticmethod
-    def _parse_xml(response: str) -> Element:
+    def _parse_xml(response: str) -> Any:
         """
         Parses the XML response and returns a dictionary.
 
         :param response: XML response.
         """
         # Parse the response and get the root element.
-        tree = xml.etree.ElementTree.ElementTree(
-            xml.etree.ElementTree.fromstring(response)
-        )
-        root = tree.getroot()
+        root = ElementTree.fromstring(response)
 
         return root
 
@@ -116,10 +112,9 @@ class Client(object):
             if status == "1":
                 # Return the vPanel username.
                 return root[0][0][1].text
-            else:
-                # Raise exception with error.
-                error = root[0][3].text
-                raise APIError(error, 0)
+            # Raise exception with error.
+            error = root[0][3].text
+            raise APIError(error, 0)
 
     def suspend(self, username: str, reason: str) -> Optional[int]:
         """
@@ -337,9 +332,9 @@ class Client(object):
             self._session.close()
 
 
-class AsyncClient(object):
+class AsyncClient:
     """
-    MyOwnFreeHost Async API client.
+    MyOwnFreeHost async API client.
 
     :param username: MyOwnFreeHost API username
     :param password: MyOwnFreeHost API password
@@ -385,17 +380,14 @@ class AsyncClient(object):
         return self._session
 
     @staticmethod
-    def _parse_xml(response: str) -> Element:
+    def _parse_xml(response: str) -> Any:
         """
         Parses the XML response and returns a dictionary.
 
         :param response: XML response.
         """
         # Parse the response and get the root element.
-        tree = xml.etree.ElementTree.ElementTree(
-            xml.etree.ElementTree.fromstring(response)
-        )
-        root = tree.getroot()
+        root = ElementTree.fromstring(response)
 
         return root
 
@@ -446,10 +438,9 @@ class AsyncClient(object):
             if status == "1":
                 # Return the vPanel username.
                 return root[0][0][1].text
-            else:
-                # Raise exception with error.
-                error = root[0][3].text
-                raise APIError(error, 0)
+            # Raise exception with error.
+            error = root[0][3].text
+            raise APIError(error, 0)
 
     async def suspend(self, username: str, reason: str) -> Optional[int]:
         """
