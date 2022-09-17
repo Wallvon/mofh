@@ -1,5 +1,5 @@
 aiohttp[speedups]==3.8.1
 asyncio==3.4.3
-uvloop==0.16.0
+uvloop==0.17.0
 requests==2.28.1
 defusedxml==0.7.1
